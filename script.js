@@ -108,3 +108,14 @@ function getWeather(lat, long) {
       });
       hourlyCard = hourlyCard.join('');
       sectionHourly.innerHTML = hourlyCard;
+
+      // create variables for daily
+      let dailyCard = data.daily.map(function (item) {
+        const dailyTemp = Math.floor(item.temp.day) + deg;
+        const dailyHigh = Math.floor(item.temp.max) + deg;
+        const dailyLow = Math.floor(item.temp.min) + deg;
+        const dailyIconCode = item.weather[0].icon;
+        const dailyIconSource = `./assets/icons/${dailyIconCode}.svg`;
+        const dailyDesc = item.weather[0].description;
+        const dailyHumidity = item.humidity;
+        const dailyWind = item.wind_speed + '%';
