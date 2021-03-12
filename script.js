@@ -43,3 +43,14 @@ function getLocation() {
       locationFail();
     }
   }
+
+// establish lat and long based on position to getWeather later on
+function locationSuccess(position) {
+    //everything you're doing in your current callback
+    lat = position.coords.latitude.toString();
+    long = position.coords.longitude.toString();
+    console.log(position);
+    console.log(lat, long);
+    getWeather(lat, long);
+  }
+
