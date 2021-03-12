@@ -65,3 +65,31 @@ function getWeather(lat, long) {
         currentHumidity.textContent = data.current.humidity + '%';
         currentFeels.textContent = Math.floor(data.current.feels_like) + deg;
         uvIndex.textContent = currentUV.toString();
+
+        // create logic for uv color coding
+      if (currentUV < 3) {
+        uvIcon.innerHTML = `<i class="fas fa-chevron-down"></i>`;
+        uvIcon.style.color = '#9dfb98';
+        uvKey.textContent = 'low';
+        uvKey.style.color = '#9dfb98';
+      } else if (currentUV > 3 && currentUV < 6) {
+        uvIcon.innerHTML = `<i class="fas fa-window-minimize"></i>`;
+        uvIcon.style.color = '#6aced5';
+        uvKey.textContent = 'moderate';
+        uvKey.style.color = '#6aced5';
+      } else if (currentUV > 6 && currentUV < 8) {
+        uvIcon.innerHTML = `<i class="fas fa-chevron-up"></i>`;
+        uvIcon.style.color = '#d56a6a';
+        uvKey.textContent = 'high';
+        uvKey.style.color = '#d56a6a';
+      } else if (currentUV > 8 && currentUV < 11) {
+        uvIcon.innerHTML = `<i class="fas fa-chevron-up"></i><i class="fas fa-chevron-up"></i>`;
+        uvIcon.style.color = '#b64747';
+        uvKey.textContent = ' very high';
+        uvKey.style.color = '#b64747';
+      } else if (currentUV > 11) {
+        uvIcon.innerHTML = `<i class="fas fa-exclamation-triangle"></i>`;
+        uvIcon.style.color = '#cf3333';
+        uvKey.textContent = ' danger';
+        uvKey.style.color = '#cf3333';
+      }
