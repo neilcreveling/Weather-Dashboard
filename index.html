@@ -46,3 +46,36 @@
             </div>
           </nav>
         </header>
+        <!-- add current weather  -->
+      <section class="primary-card">
+        <div class="day-location">
+          <div class="date-time">
+            <p id="date"></p>
+            <p id="time"></p>
+          </div>
+          <div class="location">
+            <p id="city"></p>
+            <p id="state"></p>
+          </div>
+        </div>
+        <div class="current-wrap">
+          <div class="card-side-left">
+            <p>Wind: <span class="currentWind"></span></p>
+            <p>Humidity: <span class="currentHumidity"></span></p>
+          </div>
+          <div class="card-center">
+            <img src="" alt="" class="currentIcon" />
+            <h2 class="currentTemp"></h2>
+            <p class="currentDesc"></p>
+          </div>
+          <div class="card-side-right">
+            <p>Feels Like: <span class="currentFeels"></span></p>
+            <p>
+              UVI: <span class="currentUV"></span>
+              <span id="uvIcon"></span>
+              <span id="uvKey"></span>
+            </p>
+          </div>
+        </div>
+      </section>
+        
