@@ -1,4 +1,9 @@
 // create variables
+const deg = '\xB0';
+
+const currentDate = moment().format('ddd MMMM DD' + ', ' + 'YYYY');
+const currentTime = moment().format('LT');
+
 const bgNight = document.querySelector('.night');
 const bgDay = document.querySelector('.day');
 const bgSunset = document.querySelector('.sunset');
