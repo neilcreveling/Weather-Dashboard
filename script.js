@@ -93,3 +93,18 @@ function getWeather(lat, long) {
         uvKey.textContent = ' danger';
         uvKey.style.color = '#cf3333';
       }
+
+        // get hour for hourly display
+        const hourUnix = item.dt;
+        const hour = moment(hourUnix * 1000).format('ha');
+
+        return `<div class="hourly-wrap">
+            <div class="hourlyTime-card">
+              <h6 class="hourly">${hour}</h6>
+              <img src="${hourlyIconSource}" alt="${hourlyDesc}" class="hourlyIcon">
+              <h4 class="hourlytemp">${hourlyTemp}</h4>
+            </div>
+          </div>`;
+      });
+      hourlyCard = hourlyCard.join('');
+      sectionHourly.innerHTML = hourlyCard;
