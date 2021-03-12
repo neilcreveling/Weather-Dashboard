@@ -34,3 +34,12 @@ let unit = degMeasurement.dataset.unit;
 
 const date = document.querySelector('#date');
 const time = document.querySelector('#time');
+
+// use navigator.geolocation property to return geolocation object that gives web content access to location of device
+function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(locationSuccess, locationFail);
+    } else {
+      locationFail();
+    }
+  }
