@@ -44,13 +44,24 @@ function getLocation() {
     }
   }
 
-// establish lat and long based on position to getWeather later on
-function locationSuccess(position) {
-    //everything you're doing in your current callback
-    lat = position.coords.latitude.toString();
-    long = position.coords.longitude.toString();
-    console.log(position);
-    console.log(lat, long);
-    getWeather(lat, long);
-  }
-
+// fetch call with weather variables
+function getWeather(lat, long) {
+    const currentWeatherURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=${unit}&exclude=minutely&appid=93fbb945657a5e5ca75650241870b021`;
+  
+    fetch(currentWeatherURL).then(function (response) {
+      return response.json().then(function (data) {
+        const iconCode = data.current.weather[0].icon;
+        const iconSource = `./assets/icons/${iconCode}.svg`;
+        const currentUV = data.current.uvi;
+        const latData = data.lat;
+        const lonData = data.lon;
+        console.log(latData, lonData);
+  
+        currentIcon.src = iconSource;
+        currentIcon.alt = data.current.weather[0].description;
+        currentTemp.textContent = Math.floor(data.current.temp) + deg;
+        currentDesc.textContent = data.current.weather[0].description;
+        currentWind.textContent = Math.floor(data.current.wind_speed) + 'mph';
+        currentHumidity.textContent = data.current.humidity + '%';
+        currentFeels.textContent = Math.floor(data.current.feels_like) + deg;
+        uvIndex.textContent = currentUV.toString();
