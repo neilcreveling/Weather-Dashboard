@@ -51,7 +51,7 @@ function getWeather(lat, long) {
     fetch(currentWeatherURL).then(function (response) {
       return response.json().then(function (data) {
         const iconCode = data.current.weather[0].icon;
-        const iconSource = `./assets/icons/${iconCode}.svg`;
+        const iconSource = `./icons/${iconCode}.svg`;
         const currentUV = data.current.uvi;
         const latData = data.lat;
         const lonData = data.lon;
@@ -98,7 +98,7 @@ function getWeather(lat, long) {
         let hourlyCard = data.hourly.slice(0, -24).map(function (item) {
           const hourlyTemp = Math.floor(item.temp) + deg;
           const hourlyIconCode = item.weather[0].icon;
-          const hourlyIconSource = `./assets/icons/${hourlyIconCode}.svg`;
+          const hourlyIconSource = `./icons/${hourlyIconCode}.svg`;
           const hourlyDesc = item.weather[0].description;
   
           // get hour for hourly display
@@ -121,7 +121,7 @@ function getWeather(lat, long) {
           const dailyHigh = Math.floor(item.temp.max) + deg;
           const dailyLow = Math.floor(item.temp.min) + deg;
           const dailyIconCode = item.weather[0].icon;
-          const dailyIconSource = `./assets/icons/${dailyIconCode}.svg`;
+          const dailyIconSource = `./icons/${dailyIconCode}.svg`;
           const dailyDesc = item.weather[0].description;
           const dailyHumidity = item.humidity;
           const dailyWind = item.wind_speed + '%';
