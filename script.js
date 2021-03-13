@@ -189,3 +189,18 @@ searchIcon.addEventListener('click', function () {
     locationInput.classList.toggle('show-input');
     locationInput.focus();
   });
+
+// toggle farenheight/celcius and set data-unit attribute
+degToggle.addEventListener('change', function () {
+    if (this.checked) {
+      degMeasurement.setAttribute('data-unit', 'imperial');
+      toggleF.textContent = 'F' + deg;
+      toggleC.textContent = '';
+    } else {
+      degMeasurement.setAttribute('data-unit', 'metric');
+      toggleC.textContent = 'C' + deg;
+      toggleF.textContent = '';
+    }
+    unit = degMeasurement.getAttribute('data-unit');
+    getWeather(lat, long);
+  });
