@@ -182,3 +182,10 @@ searchForm.addEventListener('submit', function (e) {
       });
     });
   });
+
+// toggle search bar
+searchIcon.addEventListener('click', function () {
+    console.log('click');
+    locationInput.classList.toggle('show-input');
+    locationInput.focus();
+  });
