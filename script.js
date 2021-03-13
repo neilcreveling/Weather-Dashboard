@@ -153,3 +153,18 @@ function getWeather(lat, long) {
       });
       dailyCard = dailyCard.join('');
       sectionDaily.innerHTML = dailyCard;
+      
+      // for location display, fetch mapbox api
+      fetch(
+        `https://api.mapbox.com/geocoding/v5/mapbox.places/${long},${lat}.json?access_token=pk.eyJ1IjoieW9uZGF2IiwiYSI6ImNrbTMwdzVrcDFiOHEyb3FzMmZyM3BraTMifQ.WqR9QQOGPMezPeLCeRrelg`
+      ).then(function (response) {
+        return response.json().then(function (data) {
+          const city = document.querySelector('#city');
+          const state = document.querySelector('#state');
+          city.innerHTML = `${data.features[0].context[2].text},`;
+          state.innerHTML = `${data.features[0].context[5].text}`;
+        });
+      });
+    });
+  });
+}
