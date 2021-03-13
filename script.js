@@ -153,7 +153,7 @@ function getWeather(lat, long) {
       });
       dailyCard = dailyCard.join('');
       sectionDaily.innerHTML = dailyCard;
-      
+
       // for location display, fetch mapbox api
       fetch(
         `https://api.mapbox.com/geocoding/v5/mapbox.places/${long},${lat}.json?access_token=pk.eyJ1IjoieW9uZGF2IiwiYSI6ImNrbTMwdzVrcDFiOHEyb3FzMmZyM3BraTMifQ.WqR9QQOGPMezPeLCeRrelg`
@@ -168,3 +168,17 @@ function getWeather(lat, long) {
     });
   });
 }
+
+// get weather from search bar
+searchForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    let zipCode = locationInput.value;
+    const currentWeatherURL = `https://api.openweathermap.org/data/2.5/weather?zip=${zipCode},us&appid=93fbb945657a5e5ca75650241870b021`;
+  
+    fetch(currentWeatherURL).then(function (response) {
+      return response.json().then(function (data) {
+        getWeather(data.coord.lat, data.coord.lon);
+        searchForm.reset();
+      });
+    });
+  });
