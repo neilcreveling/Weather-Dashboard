@@ -7,6 +7,7 @@ This application uses a third-party API to retrieve data about the weather based
 
 ## Application
 
+https://neilcreveling.github.io/Weather-Dashboard/
 
 Upon opening the link, the user is presented with an empty weather dashboard. In the top left corner there is a search input area to type a zip code, and in the top right corner the user may toggle fahrenheit or celsius temperature measurement.
 
