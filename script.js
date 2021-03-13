@@ -119,3 +119,37 @@ function getWeather(lat, long) {
         const dailyDesc = item.weather[0].description;
         const dailyHumidity = item.humidity;
         const dailyWind = item.wind_speed + '%';
+
+        // get date for day display
+        const dateUnix = item.dt;
+        const date = moment(dateUnix * 1000).format('ddd, MMM DD');
+
+        return `<div class="daily-card">
+        <div class="card-center">
+          <h5 class="dailyDate">${date}</h5>
+          <img src="${dailyIconSource}" alt="${dailyDesc}" class="daily-icon">
+          <h3 class="dailyTemp">${dailyTemp}</h3>
+          <p class="dailyDesc">${dailyDesc}</p>
+        </div>
+
+        <div class="daily-inner-cont">
+          <div class="card-side-left">
+            <p>Humidity: <span class="dailyHumidity">${dailyHumidity}</span></p>
+            <p>Wind: <span class="dailyWind">${dailyWind}</span></p>
+          </div>
+
+          <div class="card-side-right">
+            <p>
+              <i class="fas fa-angle-up"></i>
+              <span class="high">${dailyHigh}</span>
+            </p>
+            <p>
+              <i class="fas fa-angle-down"></i>
+              <span class="low">${dailyLow}</span>
+            </p>
+          </div>
+        </div>
+      </div>`;
+      });
+      dailyCard = dailyCard.join('');
+      sectionDaily.innerHTML = dailyCard;
