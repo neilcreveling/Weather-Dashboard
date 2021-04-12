@@ -107,7 +107,7 @@ function getWeather(lat, long) {
   
           return `<div class="hourly-wrap">
               <div class="hourlyTime-card">
-                <h6 class="hourly">${hour}</h6>
+                <h5 class="hourly">${hour}</h5>
                 <img src="${hourlyIconSource}" alt="${hourlyDesc}" class="hourlyIcon">
                 <h4 class="hourlytemp">${hourlyTemp}</h4>
               </div>
@@ -132,9 +132,9 @@ function getWeather(lat, long) {
   
           return `<div class="daily-card">
           <div class="card-center">
-            <h5 class="dailyDate">${date}</h5>
+            <h4 class="dailyDate">${date}</h4>
             <img src="${dailyIconSource}" alt="${dailyDesc}" class="daily-icon">
-            <h3 class="dailyTemp">${dailyTemp}</h3>
+            <h4 class="dailyTemp">${dailyTemp}</h4>
             <p class="dailyDesc">${dailyDesc}</p>
           </div>
   

@@ -273,7 +273,7 @@ input:checked + .slider:before {
 }
 
 .hourlyTime-card img {
-  width: 100%;
+  width: 250%;
 }
 
 /***** Daily weather *****/
@@ -303,7 +303,7 @@ input:checked + .slider:before {
 }
 
 .daily-card img {
-  width: 12vw;
+  width: 14vw;
 }
 
 .daily-inner-cont {
