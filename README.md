@@ -17,8 +17,15 @@ Upon opening the link, the user is presented with an empty weather dashboard. In
 
 When the zip code is entered, the dashboard updates with a variety of information. Information output includes today's weather, hourly weather, and weather for days into the future. Weather features include temperature, humidity, wind speed, uv index, and general weather condition, indicated in text and icon format.
 
+Desktop Version:
 
-![Weather Dashboard Result Display](./screenshots/weather_result.png)
+![Weather Dashboard Result Display 1](./screenshots/dashboard_1.png)
+
+![Weather Dashboard Result Display 1](./screenshots/dashboard_2.png)
+
+Mobile Version:
+
+![Weather Dashboard Result Mobile 1](./screenshots/dashboard_mobile)
 
 
 ## License
