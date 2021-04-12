@@ -75,7 +75,7 @@ nav label {
 
 .location-input {
   margin-left: 0.6rem;
-  font-size: 0.9em;
+  font-size: 1.2em;
   color: var(--primary-light);
   background: none;
   border: none;
@@ -84,12 +84,16 @@ nav label {
 }
 
 ::placeholder {
-  font-size: 0.9em;
+  font-size: 1.2rem;
   color: var(--background-light);
 }
 
 .location-input:focus {
   outline: none;
+}
+
+h3 {
+  font-size: 2.5rem;
 }
 
 /* toggle class in js for search bar */
@@ -104,7 +108,7 @@ nav label {
   justify-content: space-between;
   align-items: baseline;
   margin-right: 0.5rem;
-  font-size: 0.9em;
+  font-size: 1.2rem;
 }
 
 /* toggle switch for measurement unit */
@@ -183,7 +187,7 @@ input:checked + .slider:before {
   width: 90vw;
   margin: 0.5rem;
   padding: 0.5rem;
-  font-size: 0.9em;
+  font-size: 0.9rem;
   border-radius: 20px;
   background-color: var(--backrgound-dark);
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
@@ -193,7 +197,7 @@ input:checked + .slider:before {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem;
+  padding: 0.9rem;
 }
 
 .date-time,
@@ -218,6 +222,7 @@ input:checked + .slider:before {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  font-size: 1.5rem;
 }
 
 .card-center {
@@ -228,7 +233,7 @@ input:checked + .slider:before {
 }
 
 .currentIcon {
-  width: 75%;
+  width: 125%;
 }
 
 .card-center h2 {
