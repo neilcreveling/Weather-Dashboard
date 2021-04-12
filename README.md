@@ -25,7 +25,7 @@ Desktop Version:
 
 Mobile Version:
 
-![Weather Dashboard Result Mobile 1](./screenshots/dashboard_mobile)
+![Weather Dashboard Result Mobile 1](./screenshots/dashboard_mobile.png)
 
 
 ## License
